@@ -1,20 +1,20 @@
-SRC = src/fetch.c
+SRC = src/archfetch.c
 CC ?= cc
 CFLAGS = -O2 -std=c99 -Wall -Wextra
 LDFLAGS = -lpthread
 
 all: archfetch
 
-build:
-	$(FILES) 
+archfetch: $(SRC) src/color.h
+	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) -o archfetch
+
+build: $(FILES) 
 	$(CC) $(CFLAGS) -O $(NAME) $(FILES)
 
-clean:
+clean: 
 	rm -rf archfetch
 
-install:
-	$(SRC) src/color.h
-	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) -o archfetch
+install: archfetch
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp archfetch $(DESTDIR)$(PREFIX)/bin
 	chmod 777 $(DESTDIR)$(PREFIX)/bin/archfetch
@@ -22,4 +22,4 @@ install:
 uninstall:
 	rm -rf $(DESTDIR)$(PREFIX)/bin/archfetch
 
-.PHONY: all clean install uninstall
+.PHONY: all clean build install uninstall
