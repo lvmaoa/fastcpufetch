@@ -1,25 +1,25 @@
-SRC = src/archfetch.c
+SRC = src/fetch.c
 CC ?= cc
-CFLAGS = -O2 -std=c99 -Wall -Wextra
-LDFLAGS = -lpthread
+CFLAGS=-g -O2 -std=c99 -Wall -Wextra
+LDFLAGS=-lpthread
 
-all: archfetch
+all: fastcpufetch
 
-archfetch: $(SRC) src/color.h
-	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) -o archfetch
+fastcpufetch: $(SRC) src/color.h
+	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) -o fastcpufetch
 
 build: $(FILES) 
 	$(CC) $(CFLAGS) -O $(NAME) $(FILES)
 
 clean: 
-	rm -rf archfetch
+	rm -rf fastcpufetch
 
-install: archfetch
+install: fastcpufetch
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp archfetch $(DESTDIR)$(PREFIX)/bin
-	chmod 777 $(DESTDIR)$(PREFIX)/bin/archfetch
+	cp fastcpufetch $(DESTDIR)$(PREFIX)/bin
+	chmod 777 $(DESTDIR)$(PREFIX)/bin/fastcpufetch
 
 uninstall:
-	rm -rf $(DESTDIR)$(PREFIX)/bin/archfetch
+	rm -rf $(DESTDIR)$(PREFIX)/bin/fastcpufetch
 
-.PHONY: all clean build install uninstall
+.PHONY: clean

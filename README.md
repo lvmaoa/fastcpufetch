@@ -1,11 +1,6 @@
-# Fake Arch Fetch
+# fastcpufetch
 
-Fake Arch Fetch is a fast and light screenshot information tool that will display the "base" OS. E.g. a Manjaro system will display an Arch Linux Logo while BunsenLabs will display a Debian logo. Based on efetch, archfetch, and afetch.
-
-It's primary purpose is to display the Arch Linux logo instead of the OS logo for users using Arch Linux based systems. It currently only has the Arch Logo but will support a larger variety of distribution logos in the future.
-
-![alt text](https://github.com/aprilove/Fake-Arch-Fetch/blob/main/images/demo.png)
-
+Fast cpu fetch is a screenfetch with information about your cpu! 
 
 ### Build
 1. Install pthread dependency
@@ -24,4 +19,4 @@ To uninstall `sudo make uninstall`
 - pthreads
 
 ### To do:
-- [ ] Implement pkg counter
+- [ ] Add more lines of info about cpu
