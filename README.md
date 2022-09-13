@@ -2,6 +2,8 @@
 
 Fast cpu fetch is a screenfetch with information about your cpu! 
 
+![alt text](https://github.com/aprilove/Fake-Arch-Fetch/blob/main/images/demo.png)
+
 ### Build
 1. Install pthread dependency
 2. clone the repo
